@@ -1,1 +1,20 @@
- 
+Create a folder called as employee_management and perform the task
+1. Initiate UV
+2. Create a virtual environment
+3. install the below packages in the virtual environment:
+   - FastAPI
+   - Uvicorn
+   - Pydantic
+   - Pydantic-settings
+   - email-validator
+4. After this create the below schemas and routes
+a. Schemas:-
+    i) Employee Schema: employee_id, employee_name, employee_email, employee_position, employee_salary, employee_department (inherited from Department Schema),employee_joining_date
+    ii) Department schema :- department_id, department_name, department_head
+b. Routes:-
+    i) Create employee
+    ii) get employees
+    iii) create department
+    iv) get departments
+
+c. Create both Request and Response models for the above schemas.
