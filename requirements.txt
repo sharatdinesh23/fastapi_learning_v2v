@@ -20,4 +20,25 @@ b. Routes:-
 c. Create both Request and Response models for the above schemas.
 
 
-    
+APIRouter
+CRUD without Database
+
+products
+/product/create
+/product/update
+/product/
+/product/{1}
+
+
+seller
+/seller/
+
+
+orders
+/orders/
+
+
+
+
+
+

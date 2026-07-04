@@ -16,11 +16,8 @@ class OrderStatus(str,Enum):
 class OrderRequest(BaseModel):
     order_id:int
     order_name:str
-    quantity:int
-    item_name:List[ProductRequest]
     status: OrderStatus
 
 class OrderResponse(BaseModel):
     order_id:int
-    item_name:List[ProductResponse]
     status:OrderStatus
