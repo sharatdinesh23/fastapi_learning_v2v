@@ -1,8 +1,13 @@
 from fastapi import FastAPI
 from schemas.product_schema import ProductRequest,ProductResponse
-from schemas.user_schema import SellerUserRequest,SellerUserResponse
+from schemas.seller_schema import SellerUserRequest,SellerUserResponse
+from schemas.orders_schema import OrderRequest, OrderResponse
 
-app = FastAPI()
+app = FastAPI(
+    title = "E-Commerce Backend API",
+    description = "Welcome to V2V internship",
+    version = "1.0.0"
+)
 
 @app.get("/")
 def home():
@@ -10,12 +15,14 @@ def home():
         "message":"Welcome to E-Commerce API"
     }
 
-@app.post("/products",response_model= ProductResponse)
+@app.post("/products",response_model= ProductResponse,tags = ["Product"])
 def create_product(product:ProductRequest):
     return product
 
-@app.post("/seller",response_model = SellerUserResponse)
+@app.post("/seller",response_model = SellerUserResponse,tags = ["Seller"])
 def create_seller(seller:SellerUserRequest):
     return seller
 
-
+@app.post("/orders",response_model=OrderResponse,tags = ["Order"])
+def create_orders(orders:OrderRequest):
+    return orders
